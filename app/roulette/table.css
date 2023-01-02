@@ -1,0 +1,427 @@
+.gridContainer{
+    background-color: #00813e;
+    width: 840px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(14, 60px);
+    grid-template-rows: repeat(5, 60px);
+    color: white;
+}
+.grid-item{
+    border: #a2bd55 solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.grid-zero{
+    grid-row: 1/4;
+}
+.inside-item{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.smaller{
+    font-size: small;
+}
+.red{
+    background-color: rgb(226, 24, 24);
+}
+.black{
+    background-color: black;
+}
+.top-start{
+    grid-column: 2/6;
+    grid-row: 4/5;
+}
+.top{
+    grid-row: 4/5;
+    grid-column: span 4;
+}
+.bot-start{
+    grid-column: 2/4;
+    grid-row: 5/6;
+}
+.bot{
+    grid-row: 5/6;
+    grid-column: span 2;  
+}
+.token-container{
+    width: 840px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+.picture{
+    margin-left: 15px;
+    margin-right: 15px;
+    border: black solid 5px;
+    border-radius: 100px;
+}
+.chosen{
+    border: red solid 5px;
+}
+p{
+    font-size:x-small;
+}
+.wheel{
+    display: flex;
+    min-width: 450px;
+    min-height: 450px;
+    max-width: 450px;
+    max-height: 450px;
+    background-position: center;
+    background-image: url("./wheel.png");
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.dot{
+    width: 10px;
+    height: 300px;
+    rotate: 180deg;
+}
+.dotAnimation{
+    animation: move 8s linear 1;
+    animation-play-state: paused;
+}
+
+.dot-end{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+.dot-start{
+    height: 290px;
+    width:10px;
+}
+.animationActive{
+    animation-play-state: running;
+}
+
+
+@keyframes move{
+    12.5%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -180deg;
+    }
+    37.5%{
+        rotate: -360deg;
+    }
+    50%{
+        rotate: -540deg;
+    }
+    62.5%{
+        rotate: -720deg;
+    }
+    75%{
+        rotate: -900deg;
+    }
+    87.5%{
+        rotate: -1080deg;
+    }
+    100%{
+        rotate: -1260deg;
+        
+    }
+}
+
+.dotAnimationEndingZero{ animation: zero 2s ease-out 1;}
+.zero{
+    rotate: -1620deg;
+}
+@keyframes zero{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1620deg;}}
+
+.dotAnimationEndingOne{ animation: one 2s ease-out 1;}
+.one{
+    rotate: -1395deg;
+}
+@keyframes one{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1395deg;}}
+
+.dotAnimationEndingTwo{ animation: two 2s ease-out 1;} 
+.two{
+    rotate: -1562deg;
+}
+@keyframes two{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1562deg;}}
+    
+.dotAnimationEndingThree{ animation: three 2s ease-out 1;}
+.three{
+    rotate: -1278.5deg;
+}
+@keyframes three{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1278.5deg;}}
+
+.dotAnimationEndingFour{ animation: four 2s ease-out 1;}
+.four{
+    rotate: -1581deg;
+}
+@keyframes four{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1581deg}}
+
+.dotAnimationEndingFive{ animation: five 2s ease-out 1;}
+.five{
+    rotate: -1434.5deg;
+}
+@keyframes five{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1434.5deg}}
+
+.dotAnimationEndingSix{ animation: six 2s ease-out 1;}
+.six{
+    rotate: -1523deg;
+}
+@keyframes six{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1523deg;}}
+
+.dotAnimationEndingSeven{ animation: seven 2s ease-out 1;}
+.seven{
+    rotate: -1317deg;
+}
+@keyframes seven{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1317deg;}}
+
+.dotAnimationEndingEight{ animation: eight 2s ease-out 1;}
+.eight{
+    rotate: -1464deg;
+}
+@keyframes eight{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1464deg;}}
+
+.dotAnimationEndingNine{ animation: nine 2s ease-out 1;}
+.nine{
+    rotate: -1355.5deg;
+}
+@keyframes nine{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1355.5deg;}}
+
+.dotAnimationEndingTen{ animation: ten 2s ease-out 1;}
+.ten{
+    rotate: -1444.5deg;
+}
+@keyframes ten{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1444.5deg;}}
+
+.dotAnimationEndingEleven{ animation: eleven 2s ease-out 1;}
+.eleven{
+    rotate: -1484deg;
+}
+@keyframes eleven{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1484deg;}}
+
+.dotAnimationEndingTwelve{ animation: twelve 2s ease-out 1;}
+.twelve{
+    rotate: -1297.5deg;
+}
+@keyframes twelve{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1297.5deg;}}
+
+.dotAnimationEndingThirteen{ animation: thirteen 2s ease-out 1;}
+.thirteen{
+    rotate: -1504deg;
+}
+@keyframes thirteen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1504deg;}}
+
+.dotAnimationEndingFourteen{ animation: fourteen 2s ease-out 1;}
+.fourteen{
+    rotate: -1375deg;
+}
+@keyframes fourteen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1375deg;}}
+
+.dotAnimationEndingFifteen{ animation: fifteen 2s ease-out 1;}
+.fifteen{
+    rotate: -1600deg;
+}
+@keyframes fifteen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1600deg;}}
+
+.dotAnimationEndingSixteen{ animation: sixteen 2s ease-out 1;}
+.sixteen{
+    rotate: -1415deg;
+}
+@keyframes sixteen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1415deg;}}
+
+.dotAnimationEndingSeventeen{ animation: seventeen 2s ease-out 1;}
+.seventeen{
+    rotate: -1543deg;
+}
+@keyframes seventeen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1543deg;}}
+
+.dotAnimationEndingEighteen{ animation: eighteen 2s ease-out 1;}
+.eighteen{
+    rotate: -1336deg;
+}
+@keyframes eighteen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1336deg;}}
+
+.dotAnimationEndingNineteen{ animation: nineteen 2s ease-out 1;}
+.nineteen{
+    rotate: -1600.5deg;
+}
+@keyframes nineteen{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1600.5deg;}}
+
+.dotAnimationEndingTwenty{ animation: twenty 2s ease-out 1;}
+.twenty{
+    rotate: -1385deg;
+}
+@keyframes twenty{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1385deg;}}
+
+.dotAnimationEndingTwentyone{ animation: twentyone 2s ease-out 1;}
+.twentyone{
+    rotate: -1571.5deg;
+}
+@keyframes twentyone{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1571.5deg;}}
+
+.dotAnimationEndingTwentytwo{ animation: twentytwo 2s ease-out 1;}
+.twentytwo{
+    rotate: -1346deg;
+}
+@keyframes twentytwo{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1346deg;}}
+
+.dotAnimationEndingTwentythree{ animation: twentythree 2s ease-out 1;}
+.twentythree{
+    rotate: -1454.5deg;
+}
+@keyframes twentythree{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1454.5deg;}}
+
+.dotAnimationEndingTwentyfour{ animation: twentyfour 2s ease-out 1;}
+.twentyfour{
+    rotate: -1424deg;
+}
+@keyframes twentyfour{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1424deg;}}
+
+.dotAnimationEndingTwentyfive{ animation: twentyfive 2s ease-out 1;}
+.twentyfive{
+    rotate: -1552deg;
+}
+@keyframes twentyfive{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1552deg;}}
+
+.dotAnimationEndingTwentysix{ animation: twentysix 2s ease-out 1;}
+.twentysix{
+    rotate: -1269deg;
+}
+@keyframes twentysix{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1269deg;}}
+
+.dotAnimationEndingTwentyseven{ animation: twentyseven 2s ease-out 1;}
+.twentyseven{
+    rotate: -1513.5deg;
+}
+@keyframes twentyseven{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1513.5deg;}}
+
+.dotAnimationEndingTwentyeight{ animation: twentyeight 2s ease-out 1;}
+.twentyeight{
+    rotate: -1307deg;
+}
+@keyframes twentyeight{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1307deg;}}
+
+.dotAnimationEndingTwentynine{ animation: twentynine 2s ease-out 1;}
+.twentynine{
+    rotate: -1326.5deg;
+}
+@keyframes twentynine{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1326.5deg;}}
+
+.dotAnimationEndingThirdy{ animation: thirdy 2s ease-out 1;}
+.thirdy{
+    rotate: -1474.5deg;
+}
+@keyframes thirdy{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1474.5deg;}}
+
+.dotAnimationEndingThirdyone{ animation: thirdyone 2s ease-out 1;}
+.thirdyone{
+    rotate: -1365.5deg;
+}
+@keyframes thirdyone{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1365.5deg;}}
+
+.dotAnimationEndingThirdytwo{ animation: thirdytwo 2s ease-out 1;}
+.thirdytwo{
+    rotate: -1610deg;
+}
+@keyframes thirdytwo{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1610deg;}}
+
+.dotAnimationEndingThirdythree{ animation: thirdythree 2s ease-out 1;}
+.thirdythree{
+    rotate: -1404.5deg;
+}
+@keyframes thirdythree{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1404.5deg;}}
+
+.dotAnimationEndingThirdyfour{ animation: thirdyfour 2s ease-out 1;}
+.thirdyfour{
+    rotate: -1533.5deg;
+}
+@keyframes thirdyfour{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1533.5deg;}}
+
+.dotAnimationEndingThirdyfive{ animation: thirdyfive 2s ease-out 1;}
+.thirdyfive{
+    rotate: -1288deg;
+}
+@keyframes thirdyfive{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1288deg;}}
+
+.dotAnimationEndingThirdysix{ animation: thirdysix 2s ease-out 1;}
+.thirdysix{
+    rotate: -1494deg;
+}
+@keyframes thirdysix{
+    0%{rotate: -1260deg;}
+    100%{rotate :-1494deg;}}

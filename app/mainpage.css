@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+}
+.mainContainer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.leftContainer{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+}
+.rightContainer{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    background-color: black;
+}
+.blackButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    height: 8vh;
+    width: 13.5vw;
+    border-radius: 36%;
+    transition-duration: 500ms;
+}
+
+.whiteButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    height: 8vh;
+    width: 13.5vw;
+    border-radius: 36%;
+    transition-duration: 500ms;
+}
+.blackButton:hover{
+    width: 15vw;
+    height: 10vh;
+}
+.whiteButton:hover{
+    width: 15vw;
+    height: 10vh;
+}

@@ -6,7 +6,6 @@ import { logoutUser } from "../../Components/logout";
 import Link from "next/link";
 export default function account() {
     const {user} = useContext(userContext);
-    const [notLoggedWaiter, setNotLoggedWaiter] = useState(<div></div>)
     const HandleLogout = () => {
         logoutUser()
     }
@@ -21,15 +20,11 @@ export default function account() {
     )
     }
     else{
-        setTimeout(()=> {
-            setNotLoggedWaiter(<div>
-                <h3></h3>
-                <Link a href="/login"><p>log in</p></Link>
-            </div>)
-        }, 500)
-
     return(
-        {notLoggedWaiter}
+        <div>
+            <h3></h3>
+            <Link a href="/login"><p>log in</p></Link>
+        </div>
         )
 
     }

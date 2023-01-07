@@ -21,11 +21,14 @@ export default function account() {
     )
     }
     else{
-        return (
+        
+        return setTimeout(() => {
+            return (
             <div>
-                <h3> Currently no logged user </h3>
+                <h3></h3>
                 <Link a href="/login"><p>log in</p></Link>
             </div>
+        )}, 500
         )
     }
 }

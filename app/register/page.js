@@ -21,7 +21,7 @@ export default function register() {
       <h2>Register</h2>
         <input className="item" placeholder='Name or Nickname' onChange={(e) => setInformation(information => ({...information, name: e.target.value}))} value={information.name}/>
         <input className="item" placeholder='Email' onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
-        <input className="item" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
+        <input type="password" className="item" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
         <button className="item" onClick={() => HandleSubmit()}> Submit </button>
         <Link a href="crossroad"><div className="item">back to crossroad</div></Link>
     </div>

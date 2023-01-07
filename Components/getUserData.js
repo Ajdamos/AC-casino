@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "./FirebaseConfig";
+import { db } from "./firebaseConfig";
 
 export async function getUserData(userEmail){
     

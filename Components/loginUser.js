@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./FirebaseConfig";
+import { auth } from "./firebaseConfig";
 
 export function loginUser(email, password){
     signInWithEmailAndPassword(auth, email, password)

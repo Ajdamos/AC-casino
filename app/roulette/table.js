@@ -1,16 +1,21 @@
 "use client";
+import { db } from '../../Components/firebaseConfig';
+import { doc, setDoc } from "firebase/firestore"; 
 import {useEffect, useState} from 'react'
 import Image from 'next/image'
-
+import { useContext } from 'react';
+import { userContext } from '../../Components/contextUser';
 import './table.css'
 export default function Table(){
-    const [money, setMoney] = useState(100000)
+    const {user}  = useContext(userContext)
+    const [money, setMoney] = useState(user.currency)
     const [chosenValue, setChosenValue] = useState(10);
     const [pool, setPool]  = useState([]);
     const [buttonAccesibility, setButtonAccesibility] = useState(false)
     const red = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
     const black = [2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35];
     const [animation, setAnimation] = useState("dot zero");
+    
 
     const animations = [
         { ending: "dotAnimationEndingZero", final: "zero" },
@@ -131,8 +136,13 @@ export default function Table(){
             setAnimation("dot dotAnimation animationActive")
             setTimeout(() => {
                 setAnimation("dot animationActive " + animations[winnerItem].ending)
-                setTimeout(() => {
+                setTimeout(async () => {
                     setMoney(money + tempSum)
+                    await setDoc(doc(db, "Users", user.email), {
+                        name: user.name,
+                        email: user.email,
+                        currency: money + tempSum
+                      });
                     setPool([])
                     setAnimation("dot " + animations[winnerItem].final)
                     HandleButtonAccesibility(false);

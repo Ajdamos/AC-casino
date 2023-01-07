@@ -18,7 +18,7 @@ export default function login() {
         <input placeholder='Email' className="item" onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
         <input placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
         <button className="item" onClick={() => HandleSubmit()}> Submit </button>
-        <Link a href="crossroad"><div className="item">back to crossroad</div></Link>
+        <Link a href="/crossroad"><div className="item">back to crossroad</div></Link>
     </div>
   )
 }

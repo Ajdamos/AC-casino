@@ -7,20 +7,20 @@ import { useContext } from "react"
 export default function Navbar() {
 
   const {user} = useContext(userContext)
-  const router = useRouter
+
   if (user){
     return (
     <div>
-        <Link a href="roulette">Roulette   </Link>
-        <Link a href="account">Account   </Link>
+        <Link a href="/roulette"><p>Roulette   </p></Link>
+        <Link a href="/account"><p>Account   </p></Link>
     </div>
     )
   }
   else {
     return(
       <div>
-      <Link a href="login">login   </Link>
-      <Link a href="register">register   </Link>
+      <Link a href="/login"><p>login   </p></Link>
+      <Link a href="/register"><p>register   </p></Link>
       </div>
     )
   }

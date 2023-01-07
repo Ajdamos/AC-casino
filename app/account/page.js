@@ -24,7 +24,7 @@ export default function account() {
         return (
             <div>
                 <h3> Currently no logged user </h3>
-                <Link a href="login"><p>log in</p></Link>
+                <Link a href="/login"><p>log in</p></Link>
             </div>
         )
     }

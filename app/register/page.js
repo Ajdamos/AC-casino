@@ -14,7 +14,7 @@ export default function register() {
       else if (!new RegExp(".*").test(information.email)) alert("špatně zadaný email")
       else if(information.name < 4 || information.name > 15 ) alert("jmeno je kratky nebo dlouhy")
       addUser(information.name, information.email, information.password);
-      setInformation({name: "", email: "", password: ""});
+      setInformation({name: "", email: "".toLowerCase, password: ""});
     }
     return (
     <div className="container">

@@ -13,8 +13,8 @@ export default function register() {
       if (information.password.length < 8) alert("Heslo je moc krátké")
       else if (!new RegExp(".*").test(information.email)) alert("špatně zadaný email")
       else if(information.name < 4 || information.name > 60 ) alert("jmeno je kratky nebo dlouhy")
-      addUser(information.name, information.email, information.password);
-      setInformation({name: "", email: "".toLowerCase, password: ""});
+      addUser(information.name, information.email.toLowerCase(), information.password);
+      setInformation({name: "", email: "", password: ""});
     }
     return (
     <div className="container">

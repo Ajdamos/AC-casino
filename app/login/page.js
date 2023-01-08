@@ -9,7 +9,7 @@ export default function login() {
     const router = useRouter()
 
     const HandleSubmit = () => {
-        loginUser(information.email.toLowerCase, information.password);
+        loginUser(information.email.toLowerCase(), information.password);
         router.push('/account')
     }
     return (

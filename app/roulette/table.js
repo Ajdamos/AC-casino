@@ -214,7 +214,7 @@ export default function Table(){
         <div onClick={()=> HandleBet("black")} className="grid-item bot black"><p>{InnerTextView("black")}</p></div>
         <div onClick={()=> HandleBet("19-36")} className="grid-item bot">19-36 <p>{InnerTextView("19-36")}</p></div>
     </div>
-    <p>Your currency {money}</p>
+    <h3>Your currency {money}</h3>
     <button disabled={buttonAccesibility} className="spinButton" onClick={() => HandleSpin()}>Spin</button>
     <div className="token-container">
         <Image className={HandleBorder(chosenValue, 10)} onClick={()=>HandleValueChange(10)} src="/chip-10.png" alt="chip-10" width="50" height="50"/> 
@@ -222,6 +222,8 @@ export default function Table(){
         <Image className={HandleBorder(chosenValue, 100)} onClick={()=>HandleValueChange(100)} src="/chip-100.png" alt="chip-100" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 250)} onClick={()=>HandleValueChange(250)} src="/chip-250.png" alt="chip-250" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 500)} onClick={()=>HandleValueChange(500)}  src="/chip-500.png" alt="chip-500" width="50" height="50"/> 
+        <Image className={HandleBorder(chosenValue, money)} onClick={()=>HandleValueChange(money)}  src="/chip-allin.png" alt="chip-500" width="50" height="50"/> 
+        <input className={HandleBorder(chosenValue, e => e.target.value)} onClick={e =>HandleValueChange(e.target.value)} placeholder='Custom value'/>
     </div>
         <div className="wheel" >
             <div className={animation}>

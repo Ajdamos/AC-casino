@@ -1,6 +1,6 @@
 "use client"
 import { userContext } from "../Components/contextUser";
-import { Navbar } from "./(navbar)/page";
+import Navbar from "./navbar/page";
 import { useState } from "react";
 
 

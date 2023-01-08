@@ -8,7 +8,7 @@ import { userContext } from "../../Components/contextUser"
 import { useContext } from "react"
 
 
-export function Navbar(){
+export default function navbar(){
     const {user, setUser} = useContext(userContext)
     useEffect(() => {
         onAuthStateChanged(auth, async item => {

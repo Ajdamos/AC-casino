@@ -214,7 +214,8 @@ export default function Table(){
         <div onClick={()=> HandleBet("black")} className="grid-item bot black"><p>{InnerTextView("black")}</p></div>
         <div onClick={()=> HandleBet("19-36")} className="grid-item bot">19-36 <p>{InnerTextView("19-36")}</p></div>
     </div>
-    <button disabled={buttonAccesibility} className="spinButton" onClick={() => HandleSpin()}>check ranodm   {money}</button>
+    <p>Your currency {money}</p>
+    <button disabled={buttonAccesibility} className="spinButton" onClick={() => HandleSpin()}>Spin</button>
     <div className="token-container">
         <Image className={HandleBorder(chosenValue, 10)} onClick={()=>HandleValueChange(10)} src="/chip-10.png" alt="chip-10" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 25)} onClick={()=>HandleValueChange(25)} src="/chip-25.png" alt="chip-25" width="50" height="50"/> 

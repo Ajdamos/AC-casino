@@ -1,27 +1,27 @@
+import { onAuthStateChanged } from "firebase/auth"
+import { useEffect } from "react"
+import "./navbar.css"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { auth } from "../../Components/firebaseConfig"
+import { getUserData } from "../../Components/getUserData"
 import { userContext } from "../../Components/contextUser"
 import { useContext } from "react"
 
 
-export default function Navbar() {
-
-  const {user} = useContext(userContext)
-
-  if (user){
+export function Navbar(){
+    const {user, setUser} = useContext(userContext)
+    useEffect(() => {
+        onAuthStateChanged(auth, async item => {
+          if (item){ 
+            setUser(await getUserData(item.email))
+          }
+          else {setUser("")}
+       })
+      }, [])
     return (
-    <div>
-        <Link a href="/roulette"><p>Roulette   </p></Link>
-        <Link a href="/account"><p>Account   </p></Link>
-    </div>
+        <div className="containerNavbar">
+            <Link a href="/account"><p className="navItem">Account: {user?.nickname}</p></Link>
+            <Link a href="/roulette"><p className="navItem">Roulette</p></Link>
+        </div>
     )
-  }
-  else {
-    return(
-      <div>
-      <Link a href="/login"><p>login   </p></Link>
-      <Link a href="/register"><p>register   </p></Link>
-      </div>
-    )
-  }
 }

@@ -1,7 +1,7 @@
 .gridContainer{
     background-color: #00813e;
-    width: 840px;
     justify-content: center;
+    width: 840px;
     display: grid;
     grid-template-columns: repeat(14, 60px);
     grid-template-rows: repeat(5, 60px);
@@ -14,6 +14,9 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+input:focus{
+    border-color: red;
 }
 .grid-zero{
     grid-row: 1/4;
@@ -49,9 +52,10 @@
 }
 .token-container{
     width: 840px;
-    height: 60px;
+    height: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .picture{
     margin-left: 15px;
@@ -61,6 +65,31 @@
 }
 .chosen{
     border: red solid 5px;
+}
+.MainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+}
+.right{
+    height: 90vh;
+    width: 40vw;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    width: 50vw;
+}
+.spinButton{
+    width: 200px;
+    height: 30px;
+    color: black;
+    background-color: darkgoldenrod;
+    border-color: darkgoldenrod;
 }
 p{
     font-size:x-small;

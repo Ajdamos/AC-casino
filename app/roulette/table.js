@@ -7,15 +7,20 @@ import { useContext } from 'react';
 import { userContext } from '../../Components/contextUser';
 import './table.css'
 export default function Table(){
-    const {user}  = useContext(userContext)
-    const [money, setMoney] = useState(user.currency)
+    const {user, setUser} = useContext(userContext);
+    const [money, setMoney] = useState("loading")
+    
+    useEffect(()=> {
+        setMoney(user?.currency)
+    }, [user])
+
     const [chosenValue, setChosenValue] = useState(10);
     const [pool, setPool]  = useState([]);
     const [buttonAccesibility, setButtonAccesibility] = useState(false)
     const red = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
     const black = [2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35];
     const [animation, setAnimation] = useState("dot zero");
-    
+
 
     const animations = [
         { ending: "dotAnimationEndingZero", final: "zero" },
@@ -143,6 +148,11 @@ export default function Table(){
                         email: user.email,
                         currency: money + tempSum
                       });
+                    setUser({
+                        name: user.name,
+                        email: user.email,
+                        currency: money + tempSum
+                    })
                     setPool([])
                     setAnimation("dot " + animations[winnerItem].final)
                     HandleButtonAccesibility(false);
@@ -164,7 +174,8 @@ export default function Table(){
     }
 
     return (
-    <div>
+    <div className='MainContainer'>
+    <div className='left'>
     <div className="gridContainer">
         <div onClick={()=> HandleBet("0")} className="grid-item grid-zero">0 <p>{InnerTextView("0")}</p></div>
         <div onClick={()=> HandleBet("3")} className="grid-item red">3 <p>{InnerTextView("3")}</p></div>
@@ -214,23 +225,28 @@ export default function Table(){
         <div onClick={()=> HandleBet("black")} className="grid-item bot black"><p>{InnerTextView("black")}</p></div>
         <div onClick={()=> HandleBet("19-36")} className="grid-item bot">19-36 <p>{InnerTextView("19-36")}</p></div>
     </div>
-    <h3>Your currency {money}</h3>
-    <button disabled={buttonAccesibility} className="spinButton" onClick={() => HandleSpin()}>Spin</button>
+   
+    
     <div className="token-container">
+    <h3>currency: {money}</h3>
         <Image className={HandleBorder(chosenValue, 10)} onClick={()=>HandleValueChange(10)} src="/chip-10.png" alt="chip-10" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 25)} onClick={()=>HandleValueChange(25)} src="/chip-25.png" alt="chip-25" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 100)} onClick={()=>HandleValueChange(100)} src="/chip-100.png" alt="chip-100" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 250)} onClick={()=>HandleValueChange(250)} src="/chip-250.png" alt="chip-250" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 500)} onClick={()=>HandleValueChange(500)}  src="/chip-500.png" alt="chip-500" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, money)} onClick={()=>HandleValueChange(money)}  src="/chip-allin.png" alt="chip-500" width="50" height="50"/> 
-        <input className={HandleBorder(chosenValue, e => e.target.value)} onClick={e =>HandleValueChange(e.target.value)} placeholder='Custom value'/>
+        <input className={HandleBorder(chosenValue, e => e.target.value)} onClick={e =>HandleValueChange(e.target.value)} width="80" heigth="50" placeholder='Custom value'/>
     </div>
-        <div className="wheel" >
-            <div className={animation}>
-                <div className="dot-start"></div>
-                <div className="dot-end"></div>
-            </div>
+    <button disabled={buttonAccesibility} className="spinButton" onClick={() => HandleSpin()}>Spin</button>
+    </div>
+    <div className="right">
+    <div className="wheel" >
+        <div className={animation}>
+            <div className="dot-start"></div>
+            <div className="dot-end"></div>
         </div>
+    </div>
+    </div>
     </div>
     )
 }

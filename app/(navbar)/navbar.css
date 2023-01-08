@@ -1,0 +1,10 @@
+.containerNavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 10vh;
+    width: 100vw;
+}
+.navItem{
+    font-size: large;
+}

@@ -2,14 +2,18 @@ body{
     margin: 0;
 }
 .container{ 
+    color: whitesmoke;
     height: 90vh;
     width: 100vw;
     display: flex;
-    
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .item{
-    margin: 10px
+    margin: 10px;
+    font-size: x-large;
+}
+.black{
+    color: black;
 }

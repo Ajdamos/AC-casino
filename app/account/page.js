@@ -1,7 +1,6 @@
 "use client"
 import './account.css'
 import { useContext } from "react";
-import { useEffect } from 'react';
 import { userContext } from "../../Components/contextUser";
 import { logoutUser } from "../../Components/logout";
 import { useRouter } from 'next/navigation';
@@ -19,9 +18,9 @@ export default function account() {
     if(user){
     return (
         <div className='container'>
-            <h1>{user?.name}</h1>
-            <h2>{user?.email}</h2>
-            <h3>{user?.currency}</h3>
+            <div className='item'>{user?.name}</div>
+            <div className='item'>{user?.email}</div>
+            <div className='item'>{user?.currency}</div>
             <button onClick={() => HandleLogout()}>logout</button>
         </div>
     )
@@ -29,8 +28,8 @@ export default function account() {
     else{
     return(
         <div className='container'>
-            <h3>No user logged in</h3>
-            <Link a href="/login"><p>log in</p></Link>
+            <div className='item'>No user logged in</div>
+            <Link a href="/login"><div>log in</div></Link>
         </div>
         )
 

@@ -2,7 +2,7 @@
 import { userContext } from "../Components/contextUser";
 import Navbar from "./navbar/page";
 import { useState } from "react";
-
+import "./app.css"
 
 export default function RootLayout({ children }) {
   const [user, setUser] = useState("")

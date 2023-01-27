@@ -116,6 +116,13 @@ export default function Table(){
             else if(pool.find(item => item.id === "19-36") && winnerItem > 18) {
                 tempSum += pool.find(item => item.id === "19-36").value * 2
                 console.log("win 19-36")}
+            ///odd even
+            if(pool.find(item => item.id === "even" && winnerItem % 2 === 0 && winnerItem !== 0)){
+                tempSum += pool.find(item => item.id === "even").value * 2
+                console.log("even")}
+            else if(pool.find(item => item.id === "odd" && winnerItem % 2 === 1 && winnerItem !== 0)){
+                tempSum += pool.find(item => item.id === "odd").value * 2
+                console.log("odd")}
             ///row 1 row 2 row 3
             if(pool.find(item => item.id === "row 1" && winnerItem % 3 === 0 && winnerItem !==0)) {
                 tempSum += pool.find(item => item.id === "row 1").value * 3
@@ -220,10 +227,12 @@ export default function Table(){
         <div onClick={()=> HandleBet("1-12")} className="grid-item top-start">1-12 <p>{InnerTextView("1-12")}</p></div>
         <div onClick={()=> HandleBet("13-24")} className="grid-item top">13-24 <p>{InnerTextView("13-24")}</p></div>
         <div onClick={()=> HandleBet("25-36")} className="grid-item top">25-36 <p>{InnerTextView("25-36")}</p></div>
-        <div onClick={()=> HandleBet("1-18")} className="grid-item bot-start">1-18 <p>{InnerTextView("1-18")}</p></div>
+        <div onClick={()=> HandleBet("odd")} className='grid-item bot-start'>Odd<p>{InnerTextView("odd")}</p></div>
+        <div onClick={()=> HandleBet("1-18")} className="grid-item bot">1-18 <p>{InnerTextView("1-18")}</p></div>
         <div onClick={()=> HandleBet("red")} className="grid-item bot red"><p>{InnerTextView("red")}</p></div>
         <div onClick={()=> HandleBet("black")} className="grid-item bot black"><p>{InnerTextView("black")}</p></div>
         <div onClick={()=> HandleBet("19-36")} className="grid-item bot">19-36 <p>{InnerTextView("19-36")}</p></div>
+        <div onClick={()=> HandleBet("even")} className='grid-item bot'>Even<p></p>{InnerTextView("even")}</div>
     </div>
    
     

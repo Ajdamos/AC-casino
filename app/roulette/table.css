@@ -1,3 +1,6 @@
+body{
+    margin: 0px;
+}
 .gridContainer{
     background-color: #00813e;
     justify-content: center;
@@ -60,7 +63,7 @@ input:focus{
 .picture{
     margin-left: 15px;
     margin-right: 15px;
-    border: black solid 5px;
+    border: white solid 5px;
     border-radius: 100px;
 }
 .chosen{

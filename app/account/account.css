@@ -10,3 +10,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+.item{
+    color:aliceblue;
+    font-size: xx-large;
+}

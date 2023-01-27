@@ -21,8 +21,8 @@ export default function navbar(){
       }, [])
     return (
         <div className="containerNavbar">
-            <Link a href="/account"><p className="navItem">Account: {user?.nickname}</p></Link>
             <Link a href="/roulette"><p className="navItem">Roulette</p></Link>
+            <Link a href="/account"><p className="navItem">User {user?.name}</p></Link>
         </div>
     )
 }

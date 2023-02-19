@@ -1,7 +1,7 @@
 body{
     margin: 0;
 }
-.container{ 
+.formcontainer{ 
     color: whitesmoke;
     height: 90vh;
     width: 100vw;
@@ -10,10 +10,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-.item{
+.formitem{
     margin: 10px;
     font-size: x-large;
 }
-.black{
+.blackx{
     color: black;
 }

@@ -244,7 +244,7 @@ export default function Table(){
         <Image className={HandleBorder(chosenValue, 250)} onClick={()=>HandleValueChange(250)} src="/chip-250.png" alt="chip-250" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 500)} onClick={()=>HandleValueChange(500)}  src="/chip-500.png" alt="chip-500" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, money)} onClick={()=>HandleValueChange(money)}  src="/chip-allin.png" alt="chip-500" width="50" height="50"/> 
-        <input className={HandleBorder(chosenValue, e => e.target.value)} onClick={e =>HandleValueChange(e.target.value)} width="80" heigth="50" placeholder='Custom value'/>
+        <input className={HandleBorder(chosenValue, e => e.target.value) + " inputcustom"} onClick={e =>HandleValueChange(e.target.value)} width="80" heigth="50" placeholder='Custom value'/>
     </div>
     <button disabled={buttonAccesibility} className="spinButton" onClick={() => HandleSpin()}>Spin</button>
     </div>

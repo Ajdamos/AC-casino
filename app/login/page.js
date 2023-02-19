@@ -26,24 +26,24 @@ export default function login() {
 
     if(pageState === "login"){
       return (
-      <div className="container">
+      <div className="formcontainer">
         <h2>Login</h2>
-        <input className="item black" placeholder='Email'  onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
-        <input className="item black" type="password" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
-        <button className="item black" onClick={() => HandleSubmitLogin()}> Submit Login </button>
+        <input className="formitem blackx" placeholder='Email'  onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
+        <input className="formitem blackx" type="password" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
+        <button className="formitem blackx" onClick={() => HandleSubmitLogin()}> Submit Login </button>
         <p onClick={() => setPageState("register")}>register</p>
     </div>
     )}
 
     else if(pageState === "register"){
     return (
-    <div className="container">
-      <h2 className="item">Register</h2>
-        <input className="item black" placeholder='Name or Nickname' onChange={(e) => setInformation(information => ({...information, name: e.target.value}))} value={information.name}/>
-        <input className="item black" placeholder='Email' onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
-        <input className="item black" type="password" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
-        <button className="item" onClick={() => HandleSubmitRegister()}> Submit Register </button>
-        <p className="item" onClick={() => setPageState("login")}>login</p>
+    <div className="formcontainer">
+      <h2 className="formitem">Register</h2>
+        <input className="formitem blackx" placeholder='Name or Nickname' onChange={(e) => setInformation(information => ({...information, name: e.target.value}))} value={information.name}/>
+        <input className="formitem blackx" placeholder='Email' onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
+        <input className="formitem blackx" type="password" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
+        <button className="formitem" onClick={() => HandleSubmitRegister()}> Submit Register </button>
+        <p className="formitem" onClick={() => setPageState("login")}>login</p>
     </div>
   )}
 }

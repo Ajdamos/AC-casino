@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+}
+.slotsitem{
+    border: 1px solid whitesmoke;
+    height: 198px;
+    width: 198px;
+}

@@ -6,7 +6,7 @@ export default function Slots() {
 
 
   return (
-    <div className='container'>
+    <div className='containerx'>
         {SlotsItemComponent()}
     </div> 
   )

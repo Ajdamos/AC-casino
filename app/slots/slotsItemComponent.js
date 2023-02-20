@@ -6,26 +6,49 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { HandleGeneration } from './HandleGeneration'
 const IMAGES = [
-    <Image className='slotsitem' alt="Berries" src="/slotsIcons/slotsBerries.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Heart" src="/slotsIcons/slotsHeart.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Cherries" src="/slotsIcons/slotsCherries.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Diamond" src="/slotsIcons/slotsDiamond.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Duck" src="/slotsIcons/slotsDuck.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Lemon" src="/slotsIcons/slotsLemon.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Melon" src="/slotsIcons/slotsMelon.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Orange" src="/slotsIcons/slotsOrange.png" height="198" width="198"/>,
-    <Image className='slotsitem' alt="Seven" src="/slotsIcons/slotsSeven.png" height="198" width="198"/>,
+    "/slotsIcons/slotsHeart.png",
+    "/slotsIcons/slotsHeart.png",
+    "/slotsIcons/slotsCherries.png",
+    "/slotsIcons/slotsDiamond.png",
+    "/slotsIcons/slotsDuck.png",
+    "/slotsIcons/slotsLemon.png",
+    "/slotsIcons/slotsMelon.png",
+   "/slotsIcons/slotsOrange.png",
+    "/slotsIcons/slotsSeven.png",
 ]
-export default function SlotsItemComponent() {
-    const [finalArray, setFinalArray] = useState([])
+export default function SlotsItemComponent() {  
+  const [finalArray, setFinalArray] = useState([])
+  const [animation, setAnimation] = useState("")
     useEffect(() => {
-        setFinalArray(HandleGeneration([], IMAGES))
+        setFinalArray(HandleGeneration(IMAGES))
     }, [])
 
+  function HandleButtonSpin(newGeneratedArray) {    
+    setFinalArray(newGeneratedArray)
+    setAnimation("animationitem")
+    setTimeout(() => {
+      setAnimation("")
+    }, 4000)
+  }
+  function getFinalCombination(){
+    if(finalArray.lastNine){
+      return finalArray.lastNine.map(item => {
+        return item.props.src.substring(17, item.props.src.length - 4)
+      })}
+    else return
+  }
+  function HandleButtonDisable() {
+    if (animation === "animationitem") return true
+    else return false
+  }
 
+  
   return (
-    <div onClick={() => setFinalArray(HandleGeneration(finalArray, IMAGES))}>
-        {finalArray}
+    <div classname="bigcontainer">
+    <div className={animation}>
+        {finalArray.bigArray}
+    </div>
+    <button disabled={HandleButtonDisable()} className='spinbutton' onClick={() => HandleButtonSpin(HandleGeneration(IMAGES))} />
     </div>
   )
 }

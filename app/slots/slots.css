@@ -4,16 +4,44 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container{
+.containerx{
+    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     border: 1px solid black;
     width: 600px;
-    height: 600px;
+    height: 608px;
 }
 .slotsitem{
     border: 1px solid whitesmoke;
     height: 198px;
     width: 198px;
 }
+.animationitem{
+    animation: animateitemtoptobottom 3s 1;
+}
+.stoppeditem{
+    animation: none
+}
+.spinbutton{
+    position: fixed;
+    bottom: 10vh;
+    right: 50vw;
+}
+.bigcontainer {
+    width: 700px;
+    height: 700px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+@keyframes animateitemtoptobottom {
+    0% {
+        transform: translateY(0%);
+      }
+    
+    100% {
+        transform: translateY(-88.85%);
+      }
+    }

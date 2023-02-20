@@ -1,16 +1,16 @@
-export function HandleGeneration(oldArray, IMAGES) {
-    if(oldArray.length < 3){
+"use client"
+import "./slots.css"
+import Image from "next/image";
+import { useState } from "react";
+export function HandleGeneration(IMAGES) {
         let temp = []
-        for(let i = 0; i < 9; i++) temp.push(IMAGES[Math.floor(Math.random() * 9)])
-        return temp
-    }
-    else{
-        let temp = [];
-        for(let i = 0; i < 3; i++) {
-            temp.push(IMAGES[Math.floor(Math.random() * 9)])}
-        for(let j = 0; j < 6; j++) {
-            temp.push(oldArray[j])}
-        return temp
-    }
+        let lastNine = []
+        for(let i = 0; i < 72; i++) temp.push(<Image className="slotsitem " src={IMAGES[Math.floor(Math.random() * 9)]} alt="pics" width="198" height="198"/>)
+        for(let j = 0; j < 9; j++) {
+            temp.push(temp[j])
+            lastNine.push(temp[j])
+        }
+        return {bigArray: temp,lastNine: lastNine}
 }
+
 

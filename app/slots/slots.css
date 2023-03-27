@@ -10,24 +10,90 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     border: 1px solid black;
-    width: 600px;
-    height: 608px;
+    width: 602px;
+    height: 610px;
 }
 .slotsitem{
     border: 1px solid whitesmoke;
     height: 198px;
     width: 198px;
 }
+.greenline{
+    position: fixed;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+    height: 25px;
+    background-color:green;
+    border: 1px white solid;
+}
+.top{
+    top: 25vh;
+}
+.middle{
+    top: 47vh;
+}
+h3{
+    margin: 0px;
+}
+.tokencontainer{
+    position: fixed;
+    left: 20%;
+    top: 25%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: transparent;
+
+}
+.token{
+    border-radius: 100px;
+    border: white solid 5px;
+}
+.chosentoken{
+    border: red solid 5px;
+}
+
+.bot{
+    top: 69vh;
+}
+.toptoright{
+    transform: rotate(45deg);
+    width: 600px;
+    margin-left: -325px;
+}
+.bottoright{
+    transform: rotate(-45deg);
+    width: 650px;
+    margin-left: -325px;
+}
+
+
+.beforespin{
+    font-size: xx-large;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 602px;
+    width: 602px;
+}
 .animationitem{
-    animation: animateitemtoptobottom 3s 1;
+    animation: animateitemtoptobottom 3s 1 forwards;
 }
 .stoppeditem{
     animation: none
 }
 .spinbutton{
     position: fixed;
-    bottom: 10vh;
-    right: 50vw;
+    bottom: 10%;
+    left: 50%;
+    width: 100px;
+    height: 50px;
+    margin-left: -50px;
 }
 .bigcontainer {
     width: 700px;
@@ -45,3 +111,6 @@ body{
         transform: translateY(-88.85%);
       }
     }
+.endofanimation{
+    transform: translateY(-88.85%);
+}

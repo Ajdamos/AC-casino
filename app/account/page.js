@@ -1,5 +1,6 @@
 "use client"
 import './account.css'
+
 import { useContext } from "react";
 import { userContext } from "../../Components/contextUser";
 import { logoutUser } from "../../Components/logout";
@@ -26,6 +27,7 @@ export default function account() {
     )
     }
     else{
+    router.push("/login")
     return(
         <div className='container'>
             <div className='item'>No user logged in</div>

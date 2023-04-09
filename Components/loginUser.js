@@ -6,7 +6,7 @@ export function loginUser(email, password){
     .then((userCredential) => {
         console.log(userCredential.user)
       })
-      .catch(() => {
-        console.log('error')
+      .catch(er => {
+        console.log(er)
       });
 }

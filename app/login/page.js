@@ -14,12 +14,6 @@ export default function login() {
     const router = useRouter()
 
 
-  useEffect(() => {
-    if(user){
-      router.push("/account")
-    }
-  })
-
     const HandleSubmitLogin = async () => {
       loginUser(information.email.toLowerCase(), information.password);
       router.push("/account")

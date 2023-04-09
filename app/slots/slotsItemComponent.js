@@ -8,7 +8,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react';
 import { userContext } from '../../Components/contextUser';
-import { HandleGeneration } from './HandleGeneration'
+import { audioLose, audioWin } from '../../Components/audio';
+
 const IMAGES = [
     "/slotsIcons/slotsHeart.png",
     "/slotsIcons/slotsCherries.png",
@@ -77,7 +78,8 @@ export default function SlotsItemComponent() {
     setMoney(old => old + (tempWinMoney * 6) - 10)
     setCross(tempCross)
     setTimeout(async () => {
-      console.log("ano" + money)
+      if(!tempWinMoney) audioLose()
+      else audioWin()
       await setDoc(doc(db, "Users", user.email), {
         name: user.name,
         email: user.email,
@@ -122,7 +124,7 @@ export default function SlotsItemComponent() {
             temp.push(old[old.length - i])
           }
           for(let j = 0; j < 72; j++){
-            temp.push(<Image className="slotsitem" src={IMAGES[Math.floor(Math.random() * 2)]} alt={j} width="198" height="198"/>)
+            temp.push(<Image className="slotsitem" src={IMAGES[Math.floor(Math.random() * 7)]} alt={j} width="198" height="198"/>)
           }
           return temp
         

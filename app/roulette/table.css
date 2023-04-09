@@ -124,6 +124,7 @@ p{
     width: 10px;
     height: 10px;
     background-color: red;
+    border-radius: 100%;
 }
 .dot-start{
     height: 290px;

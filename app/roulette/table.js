@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useContext } from 'react';
 import { userContext } from '../../Components/contextUser';
 import './table.css'
+import { audioStartSpinning, audioWin, audioLose } from '../../Components/audio';
 export default function Table(){
     const {user, setUser} = useContext(userContext);
     const [money, setMoney] = useState("loading")
@@ -146,9 +147,12 @@ export default function Table(){
             /////
             
             setAnimation("dot dotAnimation animationActive")
+            audioStartSpinning()
             setTimeout(() => {
                 setAnimation("dot animationActive " + animations[winnerItem].ending)
                 setTimeout(async () => {
+                    if(tempSum > 0) audioWin()
+                    else audioLose()
                     setMoney(money + tempSum)
                     await setDoc(doc(db, "Users", user.email), {
                         name: user.name,

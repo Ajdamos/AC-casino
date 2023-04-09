@@ -8,7 +8,6 @@ import { getUserData } from "../../Components/getUserData"
 import { userContext } from "../../Components/contextUser"
 import { useContext } from "react"
 
-
 export default function navbar(){
     const {user, setUser} = useContext(userContext)
     useEffect(() => {

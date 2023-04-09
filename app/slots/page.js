@@ -4,7 +4,6 @@ import "./slots.css"
 import SlotsItemComponent from './slotsItemComponent'
 export default function Slots() {
 
-
   return (
     <div className='containerx'>
         {SlotsItemComponent()}

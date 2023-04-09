@@ -5,11 +5,9 @@ import { useContext } from "react";
 import { userContext } from "../../Components/contextUser";
 import { logoutUser } from "../../Components/logout";
 import { useRouter } from 'next/navigation';
-import Link from "next/link";
 export default function account() {
     const {user} = useContext(userContext);
     const router = useRouter()
-
 
 
     const HandleLogout = () => {
@@ -28,12 +26,5 @@ export default function account() {
     }
     else{
     router.push("/login")
-    return(
-        <div className='container'>
-            <div className='item'>No user logged in</div>
-            <Link a href="/login"><div>log in</div></Link>
-        </div>
-        )
-
     }
 }

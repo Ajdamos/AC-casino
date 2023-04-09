@@ -4,15 +4,25 @@ import { useRouter } from "next/navigation";
 import "./login.css"
 import { loginUser } from "../../Components/loginUser";
 import { addUser } from "../../Components/addUser";
-
+import { userContext } from "../../Components/contextUser";
+import { useContext } from "react";
+import { useEffect } from "react";
 export default function login() {
     const [pageState, setPageState] = useState("login")
     const [information, setInformation]  = useState({name: "", email: "", password: ""})
+    const {user} = useContext(userContext);
     const router = useRouter()
 
-    const HandleSubmitLogin = () => {
+
+  useEffect(() => {
+    if(user){
+      router.push("/account")
+    }
+  })
+
+    const HandleSubmitLogin = async () => {
       loginUser(information.email.toLowerCase(), information.password);
-      router.push('/account')
+      router.push("/account")
     }
 
     const HandleSubmitRegister = async () => {
@@ -23,7 +33,6 @@ export default function login() {
       loginUser(information.email.toLowerCase(), information.password);
       router.push('/account')
     }
-
     if(pageState === "login"){
       return (
       <div className="formcontainer">

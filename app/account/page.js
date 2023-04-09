@@ -1,7 +1,6 @@
 "use client"
 import './account.css'
-import { useEffect } from 'react';
-import { useContext } from "react";
+import { useEffect, useContext } from 'react';
 import { userContext } from "../../Components/contextUser";
 import { logoutUser } from "../../Components/logout";
 import { useRouter } from 'next/navigation';
@@ -19,7 +18,6 @@ export default function account() {
         logoutUser()
         router.push("/login")
     }
-    if(user){
     return (
         <div className='container'>
             <div className='item'>{user?.name}</div>
@@ -28,5 +26,4 @@ export default function account() {
             <button onClick={() => HandleLogout()}>logout</button>
         </div>
     )
-    }
 }

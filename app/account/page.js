@@ -24,7 +24,5 @@ export default function account() {
         </div>
     )
     }
-    else{
-    router.push("/login")
-    }
+
 }

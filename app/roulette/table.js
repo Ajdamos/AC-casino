@@ -90,7 +90,10 @@ export default function Table(){
             alert("neni dost penez")
         }
     }
-
+    function showCurrency(){
+        if(user) return <div className='currency'>currency {money}</div>
+        else return <div className='currency'>no user</div>
+    }
     function HandleSpin(){
         if(pool.length !== 0){
             HandleButtonAccesibility(true);
@@ -241,7 +244,7 @@ export default function Table(){
    
     
     <div className="token-container">
-    <h3>currency: {money}</h3>
+        {showCurrency()}
         <Image className={HandleBorder(chosenValue, 10)} onClick={()=>HandleValueChange(10)} src="/chip-10.png" alt="chip-10" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 25)} onClick={()=>HandleValueChange(25)} src="/chip-25.png" alt="chip-25" width="50" height="50"/> 
         <Image className={HandleBorder(chosenValue, 100)} onClick={()=>HandleValueChange(100)} src="/chip-100.png" alt="chip-100" width="50" height="50"/> 

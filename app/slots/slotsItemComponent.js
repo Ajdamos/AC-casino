@@ -75,7 +75,7 @@ export default function SlotsItemComponent() {
       tempCross += "bot "
       tempWinMoney += currentBet
     }
-    setMoney(old => old + (tempWinMoney * 6) - 10)
+    setMoney(old => old + (tempWinMoney * 6) - currentBet)
     setCross(tempCross)
     setTimeout(async () => {
       if(!tempWinMoney) audioLose()
@@ -83,12 +83,12 @@ export default function SlotsItemComponent() {
       await setDoc(doc(db, "Users", user.email), {
         name: user.name,
         email: user.email,
-        currency: money + (tempWinMoney * 6) - 10
+        currency: money + (tempWinMoney * 6) - currentBet
       });
       setUser({
         name: user.name,
         email: user.email,
-        currency: money + (tempWinMoney * 6) - 10
+        currency: money + (tempWinMoney * 6) - currentBet
     })
       
     }, 100)
@@ -108,6 +108,10 @@ export default function SlotsItemComponent() {
     setBorder(num.toString())
     setCurrentBet(num)
   }
+  function showCurrency(){
+    if(user) return <div className='currency'>currency {money}</div>
+    else return <div className='currency'>no user</div>
+}
   return (
     <div>
       <div onClick={() => console.log(items, animation)} className={animation}>{items}</div>
@@ -137,8 +141,7 @@ export default function SlotsItemComponent() {
     }}> Spin me :]</button>
 
     <div className="tokencontainer">
-    <h3>currency</h3>
-    <p>{money}</p>
+    {showCurrency()}
     
         <Image className={HandleBorder("10")} onClick={() => setBorderBet(10)} src="/chip-10.png" alt="chip-10" width="50" height="50"/> 
         <Image className={HandleBorder("25")} onClick={() => setBorderBet(25)} src="/chip-25.png" alt="chip-25" width="50" height="50"/> 

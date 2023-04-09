@@ -458,3 +458,8 @@ p{
 @keyframes thirdysix{
     0%{rotate: -1260deg;}
     100%{rotate :-1494deg;}}
+
+.currency{
+    font-size: xx-large;
+    color: white;
+}

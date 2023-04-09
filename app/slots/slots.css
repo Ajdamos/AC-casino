@@ -114,3 +114,7 @@ h3{
 .endofanimation{
     transform: translateY(-88.85%);
 }
+.currency{
+    font-size: xx-large;
+    color: white;
+}

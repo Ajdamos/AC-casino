@@ -1,6 +1,5 @@
 "use client"
 import './account.css'
-
 import { useContext } from "react";
 import { userContext } from "../../Components/contextUser";
 import { logoutUser } from "../../Components/logout";
@@ -8,7 +7,6 @@ import { useRouter } from 'next/navigation';
 export default function account() {
     const {user} = useContext(userContext);
     const router = useRouter()
-
     useEffect(() => {
         router.push("/login")
     }, [])

@@ -14,9 +14,8 @@ export default function login() {
     const router = useRouter()
 
 
-    const HandleSubmitLogin = async () => {
+    const HandleSubmitLogin = () => {
       loginUser(information.email.toLowerCase(), information.password);
-      router.push("/account")
     }
 
     const HandleSubmitRegister = async () => {

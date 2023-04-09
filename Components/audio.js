@@ -1,4 +1,3 @@
-import React from 'react'
 
 export function audioStartSpinning() {
   const audio = new Audio("./spinfinal.mp3")

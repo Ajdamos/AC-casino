@@ -10,12 +10,17 @@ import { useEffect } from "react";
 export default function login() {
     const [pageState, setPageState] = useState("login")
     const [information, setInformation]  = useState({name: "", email: "", password: ""})
-    const {user} = useContext(userContext);
+    const {setUser} = useContext(userContext);
     const router = useRouter()
 
+    const HandleGuestLogin = () => {
+      setUser({name: "Guest", email: "Guest has no email", currency: 1000})
+      router.push("/account")
+    }
 
     const HandleSubmitLogin = () => {
       loginUser(information.email.toLowerCase(), information.password);
+      router.push("/account")
     }
 
     const HandleSubmitRegister = async () => {
@@ -33,6 +38,7 @@ export default function login() {
         <input className="formitem blackx" placeholder='Email'  onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
         <input className="formitem blackx" type="password" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
         <button className="formitem blackx" onClick={() => HandleSubmitLogin()}> Submit Login </button>
+        <button className="formitem blackx" onClick={() => HandleGuestLogin()}> Login as Guest</button>
         <p onClick={() => setPageState("register")}>register</p>
     </div>
     )}

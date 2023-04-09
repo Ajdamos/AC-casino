@@ -157,11 +157,13 @@ export default function Table(){
                     if(tempSum > 0) audioWin()
                     else audioLose()
                     setMoney(money + tempSum)
+                    if(user.email !== "Guest has no email"){
                     await setDoc(doc(db, "Users", user.email), {
                         name: user.name,
                         email: user.email,
                         currency: money + tempSum
                       });
+                    }
                     setUser({
                         name: user.name,
                         email: user.email,

@@ -80,11 +80,13 @@ export default function SlotsItemComponent() {
     setTimeout(async () => {
       if(!tempWinMoney) audioLose()
       else audioWin()
+      if(user.email !== "Guest has no email"){
       await setDoc(doc(db, "Users", user.email), {
         name: user.name,
         email: user.email,
         currency: money + (tempWinMoney * 6) - currentBet
       });
+      }
       setUser({
         name: user.name,
         email: user.email,
@@ -118,6 +120,8 @@ export default function SlotsItemComponent() {
       
     
     <button disabled={loading} className='spinbutton' onClick={() => {
+      if(money < currentBet) return alert("Neni dost penez")
+      if(!user) return alert("no user logged")
       setLoading(true)
       setCross("")
       setAnimation("animationitem")

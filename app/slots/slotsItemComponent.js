@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react';
 import { userContext } from '../../Components/contextUser';
-import { audioLose, audioWin } from '../../Components/audio';
+import { audioLose, audioWin, audioSlots } from '../../Components/audio';
 
 const IMAGES = [
     "/slotsIcons/slotsHeart.png",
@@ -117,7 +117,7 @@ export default function SlotsItemComponent() {
       setLoading(true)
       setCross("")
       setAnimation("animationitem")
-        
+      audioSlots()
         setItems(old => {
           let temp = []
           for (let i=9; i > 0; i--){

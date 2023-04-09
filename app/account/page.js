@@ -1,5 +1,6 @@
 "use client"
 import './account.css'
+import { useEffect } from 'react';
 import { useContext } from "react";
 import { userContext } from "../../Components/contextUser";
 import { logoutUser } from "../../Components/logout";
@@ -8,7 +9,10 @@ export default function account() {
     const {user} = useContext(userContext);
     const router = useRouter()
     useEffect(() => {
-        router.push("/login")
+        setTimeout(()=> {
+            if(!user) router.push("/login")
+        }, 1000)
+        
     }, [])
 
     const HandleLogout = () => {

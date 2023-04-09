@@ -7,12 +7,11 @@ import { logoutUser } from "../../Components/logout";
 import { useRouter } from 'next/navigation';
 export default function account() {
     const {user} = useContext(userContext);
-    const router = useRouter()
 
 
     const HandleLogout = () => {
         logoutUser()
-        router.push("/login")
+
     }
     if(user){
     return (

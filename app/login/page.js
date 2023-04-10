@@ -25,7 +25,7 @@ export default function login() {
 
     const HandleSubmitRegister = async () => {
       if (information.password.length < 8) alert("Heslo je moc krátké")
-      else if (!new RegExp(".*").test(information.email)) alert("špatně zadaný email")
+      else if (!new RegExp(".*").test(information.email)) alert("špatně formát emailu")
       else if(information.name < 4 || information.name > 60 ) alert("jmeno je kratky nebo dlouhy")
       await addUser(information.name, information.email.toLowerCase(), information.password);
       loginUser(information.email.toLowerCase(), information.password);

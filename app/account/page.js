@@ -37,7 +37,7 @@ export default function account() {
     else{
         return(
         <div className='container'> 
-            <div>No current user connected</div>
+            <div className='item'>No current user connected</div>
             <button onClick={() => router.push("/login")}>Go log in</button>
         </div>
         )

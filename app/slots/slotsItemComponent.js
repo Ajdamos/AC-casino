@@ -37,14 +37,11 @@ export default function SlotsItemComponent() {
   useEffect(() => {
     if (items[80]){
       setTimeout(() => {
-        console.log(items[80])
         HandleWinRow(items)
       }, 3000)
       
     }
-    else{
-      console.log("none")
-    }
+
   }, [items])
   
   function HandleWinRow(arr){
@@ -98,7 +95,6 @@ export default function SlotsItemComponent() {
 
   function HandleResultSigns(which){
     let tempArr = cross.split(' ')
-    console.log(tempArr.includes(which))
     if(tempArr.includes(which)) return false
     else return true
   }
@@ -116,7 +112,7 @@ export default function SlotsItemComponent() {
 }
   return (
     <div>
-      <div onClick={() => console.log(items, animation)} className={animation}>{items}</div>
+      <div className={animation}>{items}</div>
       
     
     <button disabled={loading} className='spinbutton' onClick={() => {

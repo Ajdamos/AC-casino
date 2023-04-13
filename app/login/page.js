@@ -46,12 +46,12 @@ export default function login() {
     else if(pageState === "register"){
     return (
     <div className="formcontainer">
-      <h2 className="formitem">Register</h2>
+      <h2>Register</h2>
         <input className="formitem blackx" placeholder='Name or Nickname' onChange={(e) => setInformation(information => ({...information, name: e.target.value}))} value={information.name}/>
         <input className="formitem blackx" placeholder='Email' onChange={(e) => setInformation(information => ({...information, email: e.target.value}))} value={information.email}/>
         <input className="formitem blackx" type="password" placeholder='Password' onChange={(e) => setInformation(information => ({...information, password: e.target.value}))} value={information.password}/>
         <button className="formitem" onClick={() => HandleSubmitRegister()}> Submit Register </button>
-        <p className="formitem" onClick={() => setPageState("login")}>login</p>
+        <p onClick={() => setPageState("login")}>login</p>
     </div>
   )}
 }

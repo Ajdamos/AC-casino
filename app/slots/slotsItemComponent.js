@@ -128,7 +128,7 @@ export default function SlotsItemComponent() {
             temp.push(old[old.length - i])
           }
           for(let j = 0; j < 72; j++){
-            temp.push(<Image className="slotsitem" src={IMAGES[Math.floor(Math.random() * 7)]} alt={j} width="198" height="198"/>)
+            temp.push(<Image className="slotsitem" src={IMAGES[Math.floor(Math.random() * 2)]} alt={j} width="198" height="198"/>)
           }
           return temp
         

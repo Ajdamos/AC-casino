@@ -13,6 +13,7 @@ body{
 .formitem{
     margin: 10px;
     font-size: x-large;
+    width: 240px;
 }
 .blackx{
     color: black;
